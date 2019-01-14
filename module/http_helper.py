@@ -1,4 +1,14 @@
-# coding=utf-8
+# -*- coding: UTF-8 -*-
+# -------------------------------------------------------------------------------
+# Name:        模块http Helper
+# Purpose:     http请求帮助
+#
+# Author:      iccfish
+#
+# Created:     14-01-2019
+# Copyright:   (c) iccfish 2019
+# Licence:     <your licence>
+# -------------------------------------------------------------------------------
 
 import requests
 #http 请求帮助类
