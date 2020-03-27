@@ -1,8 +1,8 @@
 # coding=utf-8
 # 数据库访问接口
-class iDbHelper:
+class IDbHelper:
 
-    def executeInsert(self,sql:str,params:list=None):
+    def executeInsert(self, sql: str, params: list = None):
         '''
         执行添加语句，并返回添加后的id
         :param sql: SQL语句
@@ -10,7 +10,7 @@ class iDbHelper:
         :return: id
         '''
 
-    def executeNonQuery(self,sql:str,params:list=None):
+    def executeNonQuery(self, sql: str, params: list = None):
         '''
         执行非查询语句,并返回受影响的记录行数
         :param sql: SQL语句
@@ -18,7 +18,7 @@ class iDbHelper:
         :return: 影响行数
         '''
 
-    def ExecuteDataSet(self,sql:str,params:list=None):
+    def executeDataSet(self, sql: str, params: list = None):
         '''
         执行查询，并以list[dict]返回结果集
         :param sql:  SQL语句
