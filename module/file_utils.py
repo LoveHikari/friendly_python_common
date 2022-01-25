@@ -11,7 +11,7 @@
 # -------------------------------------------------------------------------------
 
 
-class FileHelper(object):
+class FileUtils(object):
 
     @staticmethod
     def read(file_path: str) -> str:
@@ -30,7 +30,6 @@ class FileHelper(object):
         写文件
         :param file_path: 文件路径
         :param txt: 文件内容
-        :return:
         """
         with open(file_path, "w") as f:
             f.write(txt)  # 这句话自带文件关闭功能，不需要再写f.close()

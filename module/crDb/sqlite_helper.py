@@ -1,4 +1,4 @@
-# coding=utf-8
+# -*- coding: utf-8 -*-
 import sqlite3
 
 from module.crDb.i_db_helper import IDbHelper
@@ -57,8 +57,8 @@ class SqliteHelper(IDbHelper):
 
     # 关闭数据库
     def __del__(self):
-        '''
+        """
         关闭数据库
         :return:
-        '''
+        """
         self.conn.close()

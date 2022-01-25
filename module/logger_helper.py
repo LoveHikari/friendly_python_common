@@ -23,16 +23,17 @@ class LoggerHelper(object):
     logger.setLevel(level=logging.INFO)
 
     # 获取文件处理器并设置日志级别
-    now_time = datetime.datetime.strftime(datetime.datetime.now(),'%Y%m%d')
+    now_time = datetime.datetime.strftime(datetime.datetime.now(), '%Y%m%d')
     file_path = './logs/log_"+now_time+".txt'
     f = os.path.split(file_path)
     if not os.path.exists(f[0]):
         os.makedirs(f[0])
-    handler = logging.FileHandler("./logs/log_"+now_time+".txt")
+    handler = logging.FileHandler("./logs/log_" + now_time + ".txt")
     handler.setLevel(logging.INFO)
 
     # 生成并设置文件处理器的日志格式
-    formatter = logging.Formatter('%(asctime)s - %(name)s - %(pathname)s %(filename)s[line:%(lineno)d] - %(levelname)s - %(message)s')
+    formatter = logging.Formatter(
+        '%(asctime)s - %(name)s - %(pathname)s %(filename)s[line:%(lineno)d] - %(levelname)s - %(message)s')
     handler.setFormatter(formatter)
 
     # 获取流处理器并设置日志级别

@@ -1,4 +1,4 @@
-# coding=utf-8
+# -*- coding: UTF-8 -*-
 
 from selenium import webdriver
 from selenium.webdriver import ActionChains
@@ -10,11 +10,11 @@ from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 class Driver(object):
     def __init__(self, is_mobile=False):
         if is_mobile:
-            mobileEmulation = {'deviceName': 'iPhone 8'}
+            mobile_emulation = {'deviceName': 'iPhone 8'}
             desired = DesiredCapabilities.CHROME
             desired['loggingPrefs'] = {'performance': 'ALL'}
             options = webdriver.ChromeOptions()
-            options.add_experimental_option('mobileEmulation', mobileEmulation)
+            options.add_experimental_option('mobileEmulation', mobile_emulation)
             self.driver = webdriver.Chrome(chrome_options=options, desired_capabilities=desired)
         else:
             self.driver = webdriver.Chrome()
