@@ -9,6 +9,7 @@
 # Copyright:   (c) iccfish 2019
 # Licence:     <your licence>
 # -------------------------------------------------------------------------------
+import json
 
 import requests
 
@@ -30,14 +31,16 @@ class HttpUtils(object):
         response = self.__session.get(url=url)
         return response.text
 
-    def post(self, url: str, params: dict[str, any]) -> str:
+    def post(self, url: str, data: dict[str, any]) -> str:
         """
         post 请求
         :param url: 请求地址
-        :param params: 请求参数
+        :param data: 请求参数
         :return: 响应文本
         """
-        response = self.__session.post(url=url, params=params)
+        if self.__session.headers['Content-Type'].__contains__('application/json'):
+            data = json.dumps(data)
+        response = self.__session.post(url=url, data=data)
         return response.text
 
     def set_cookies(self, cookies: str):
